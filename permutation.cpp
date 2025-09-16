@@ -64,5 +64,3 @@ int main() {
     fout << candidate;
     fout.close();
 }
-
-fdfdf
