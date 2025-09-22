@@ -56,11 +56,11 @@ void runPermutation() {
     if (!isHyperAlmostPermutation(candidate, n)) {
         candidate = mergeStrings(s2, s1);
         if (!isHyperAlmostPermutation(candidate, n)) {
-            cout << "ñòðîêè íåêîððåêòíû" << endl;
+            cout << "ÑÑ‚Ñ€Ð¾ÐºÐ¸ Ð½ÐµÐºÐ¾Ñ€Ñ€ÐµÐºÑ‚Ð½Ñ‹" << endl;
             return;
         }
     }
     fout << candidate;
     fout.close();
-    cout << "ðåçóëüòàò çàïèñàí â output.txt" << endl;
+    cout << "Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚ Ð·Ð°Ð¿Ð¸ÑÐ°Ð½ Ð² output.txt" << endl;
 }

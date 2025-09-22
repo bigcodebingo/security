@@ -15,14 +15,14 @@ string stierlitz(string word) {
             }
         }
     }
-    return word;
+    return word;Ñ‹
 }
 
 void runStierlitz() {
     int choice;
     string word;
 
-    cout << "1. ôàéë\n2. âðó÷íóþ\n";
+    cout << "1. Ã´Ã Ã©Ã«\n2. Ã¢Ã°Ã³Ã·Ã­Ã³Ã¾\n";
     cin >> choice;
     cin.ignore();
 
@@ -32,11 +32,11 @@ void runStierlitz() {
         file.close();
     }
     else {
-        cout << "ââåäèòå ñëîâî äëÿ ðàñøèôðîâêè: ";
+        cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»Ð¾Ð²Ð¾ Ð´Ð»Ñ Ñ€Ð°ÑÑˆÐ¸Ñ„Ñ€Ð¾Ð²ÐºÐ¸: ";
         getline(cin, word);
     }
 
     string decoded = stierlitz(word);
-    cout << "\nèñõîäíûé òåêñò: " << word
-        << "\nâîññòàíîâëåííûé òåêñò: " << decoded << endl;
+    cout << "\nÐ¸ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ñ‚ÐµÐºÑÑ‚: " << word
+        << "\nÐ²Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð½Ñ‹Ð¹ Ñ‚ÐµÐºÑÑ‚: " << decoded << endl;
 }
