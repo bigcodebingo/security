@@ -1,4 +1,4 @@
-п»ї#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <string>
 using namespace std;
@@ -43,8 +43,7 @@ string mergeStrings(const string& a, const string& b) {
     return a + b.substr(maxOverlap);
 }
 
-int main() {
-    setlocale(0, "");
+void runPermutation() {
     ifstream fin("C:/Users/soch1van/Desktop/security/input.txt");
     ofstream fout("C:/Users/soch1van/Desktop/security/output.txt");
 
@@ -57,10 +56,11 @@ int main() {
     if (!isHyperAlmostPermutation(candidate, n)) {
         candidate = mergeStrings(s2, s1);
         if (!isHyperAlmostPermutation(candidate, n)) {
-            cout << "СЃС‚СЂРѕРєРё РЅРµРєРѕСЂСЂРµРєС‚РЅС‹";
-            return 0;   
+            cout << "строки некорректны" << endl;
+            return;
         }
     }
     fout << candidate;
     fout.close();
+    cout << "результат записан в output.txt" << endl;
 }

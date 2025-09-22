@@ -1,4 +1,4 @@
-ï»¿#include <iostream>
+#include <iostream>
 #include <string>
 #include <fstream>
 using namespace std;
@@ -15,16 +15,14 @@ string stierlitz(string word) {
             }
         }
     }
-
     return word;
 }
 
-int main() {
-    setlocale(0, "");
+void runStierlitz() {
     int choice;
     string word;
 
-    cout << "1. Ñ„Ð°Ð¹Ð»\n2. Ð²Ñ€ÑƒÑ‡Ð½ÑƒÑŽ\n";
+    cout << "1. ôàéë\n2. âðó÷íóþ\n";
     cin >> choice;
     cin.ignore();
 
@@ -34,11 +32,11 @@ int main() {
         file.close();
     }
     else {
-        cout << "Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»Ð¾Ð²Ð¾ Ð´Ð»Ñ Ñ€Ð°ÑÑˆÐ¸Ñ„Ñ€Ð¾Ð²ÐºÐ¸: ";
+        cout << "ââåäèòå ñëîâî äëÿ ðàñøèôðîâêè: ";
         getline(cin, word);
     }
 
     string decoded = stierlitz(word);
-    cout << "\nÐ¸ÑÑ…Ð¾Ð´Ð½Ñ‹Ð¹ Ñ‚ÐµÐºÑÑ‚: " << word
-        << "\nÐ²Ð¾ÑÑÑ‚Ð°Ð½Ð¾Ð²Ð»ÐµÐ½Ð½Ñ‹Ð¹ Ñ‚ÐµÐºÑÑ‚: " << decoded << endl;
+    cout << "\nèñõîäíûé òåêñò: " << word
+        << "\nâîññòàíîâëåííûé òåêñò: " << decoded << endl;
 }
