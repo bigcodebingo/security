@@ -22,7 +22,7 @@ void runStierlitz() {
     int choice;
     string word;
 
-    cout << "1. ôàéë\n2. âðó÷íóþ\n";
+    cout << "1. файл\n2. вручную\n";
     cin >> choice;
     cin.ignore();
 
