@@ -15,7 +15,8 @@ string stierlitz(string word) {
             }
         }
     }
-    return word;ы
+    
+    return word;
 }
 
 void runStierlitz() {
