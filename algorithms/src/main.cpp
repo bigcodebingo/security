@@ -15,7 +15,7 @@ int main() {
 
     while (true) {
 
-        cout << "\nваш выбор: ";
+        cout << "\nВаш выбор: ";
         cin >> option;
 
         if (option == 1) {

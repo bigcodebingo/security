@@ -94,7 +94,7 @@ void list_access(int obj) {
 void load_from_file(const string& filename) {
     ifstream fin(filename);
     if (!fin) {
-        cerr << "Ошибка при открытии файла " << filename << endl;
+        cerr << "Ошибка при открытии файла " << filename << endl << endl;
         return;
     }
 
@@ -134,7 +134,7 @@ void load_from_file(const string& filename) {
 void save_to_file(const string& filename) {
     ofstream fout(filename);
     if (!fout) {
-        cerr << "Ошибка при сохранении файла " << filename << endl;
+        cerr << "Ошибка при сохранении файла " << filename << endl << endl;
         return;
     }
 
