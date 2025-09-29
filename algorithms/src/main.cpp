@@ -2,6 +2,7 @@
 #include "permutation.h"
 #include "stierlitz.h"
 #include "sparse_matrix.h"
+#include "chinese_wall.h"
 using namespace std;
 
 int main() {
@@ -11,6 +12,7 @@ int main() {
     cout << "1. Проверка permutation\n";
     cout << "2. Расшифровка stierlitz\n";
     cout << "3. Разряженная матрица sparse-matrix\n";
+    cout << "4. Политика chinese-wall\n";
     cout << "0. Выход\n";
 
     while (true) {
@@ -26,6 +28,9 @@ int main() {
         }
         else if (option == 3) {
             runSparseMatrix();
+        }
+        else if (option == 4) {
+            runChineseWall();
         }
         else if (option == 0) {
             cout << "Выход из программы..." << endl;
