@@ -1,0 +1,11 @@
+5 5
+users
+2 Alice
+3 Bob
+4 vova
+5 niko
+rights
+2 3 w
+3 2 r
+4 2 rw
+5 2 r
