@@ -91,7 +91,7 @@ void list_access(int obj) {
     cout << endl << endl;
 }
 
-void load_from_file(const string& filename) {
+void load_matrix(const string& filename) {
     ifstream fin(filename);
     if (!fin) {
         cerr << "Ошибка при открытии файла " << filename << endl << endl;
@@ -105,23 +105,23 @@ void load_from_file(const string& filename) {
     fin.ignore();
 
     string line;
-    bool in_users = false, in_rights = false;
+    string section;
 
     while (getline(fin, line)) {
         if (line.empty()) continue;
 
-        if (line == "users") { in_users = true; in_rights = false; continue; }
-        if (line == "rights") { in_users = false; in_rights = true; continue; }
+        if (line == "users") { section="users"; continue; }
+        if (line == "rights") { section = "rights"; continue; }
 
         stringstream ss(line);
 
-        if (in_users) {
+        if (section == "users") {
             int user_id; string username;
             ss >> user_id >> username;
             users[user_id] = username;
             next_id = max(next_id, user_id + 1);
         }
-        else if (in_rights) {
+        else if (section == "rights") {
             int user_id, object_id; string user_rights;
             ss >> user_id >> object_id >> user_rights;
             access_matrix[{user_id, object_id}] = user_rights;
@@ -153,7 +153,7 @@ void save_to_file(const string& filename) {
 
 void runSparseMatrix() {
     string cmd;
-    cout << "Используйте команды: (add/delete/edit/list/percent/load/save/exit):\n" << endl;
+    cout << "\nИспользуйте команды: (add/delete/edit/list/percent/load/save/exit):\n" << endl;
 
     while (cin >> cmd) {
         if (cmd == "add") {
@@ -162,9 +162,15 @@ void runSparseMatrix() {
             add_user(name);
         }
         else if (cmd == "delete") {
-            int id;
-            cin >> id;
-            delete_user(id);
+            string arg;
+            cin >> arg;
+            try {
+                int id = stoi(arg);
+                delete_user(id);
+            }
+            catch (...) {
+                cerr << "Неверный формат ID: " << arg << endl << endl;
+            }
         }
         else if (cmd == "edit") {
             int user_id, obj_id;
@@ -181,10 +187,10 @@ void runSparseMatrix() {
             list_access(obj);
         }
         else if (cmd == "load") {
-            load_from_file("C:/Users/soch1van/Desktop/security/matrix.txt");
+            load_matrix("C:/Users/soch1van/Desktop/security/test_matrix.txt");
         }
         else if (cmd == "save") {
-            save_to_file("C:/Users/soch1van/Desktop/security/matrix.txt");
+            save_to_file("C:/Users/soch1van/Desktop/security/matrix_example.txt");
         }
         else if (cmd == "exit") {
             cout << "Выход из режима разряженной матрицы.\n\n";
